@@ -1,4 +1,3 @@
-package src;
 import java.util.*;
 
 import javax.swing.SwingUtilities;

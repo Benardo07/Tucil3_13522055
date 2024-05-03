@@ -1,13 +1,10 @@
-package src;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.util.Collections;
 import java.util.Set;
-import java.util.Vector;
+
 
 public class WordLadderGUI extends JFrame {
     private JTextField startWordField;
@@ -15,9 +12,6 @@ public class WordLadderGUI extends JFrame {
     private JButton ucsButton;
     private JButton greedyButton;
     private JButton aStarButton;
-    private JTable outputTable;
-    private DefaultTableModel tableModel;
-    private JTextArea outputTextArea; 
     private JLabel resultLabel;
     private WordLadderSolver solver;
     private JPanel outputPanel;
@@ -104,7 +98,7 @@ public class WordLadderGUI extends JFrame {
         }
         
         private void updateResultDisplay(SolverResult result, String algorithm) {
-            outputPanel.removeAll();  // Clear previous results
+            outputPanel.removeAll();  
         
             if (result.getPath().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No path found.");
@@ -115,8 +109,8 @@ public class WordLadderGUI extends JFrame {
                     String current = result.getPath().get(i);
                     String prev = i != 0 ? result.getPath().get(i-1) : null;
         
-                    JLabel numberLabel = new JLabel((i + 1) + ". ");
-                    wordPanel.add(numberLabel);
+                    JLabel num = new JLabel((i + 1) + ". ");
+                    wordPanel.add(num);
         
                     for (int j = 0; j < current.length(); j++) {
                         JLabel label = new JLabel(String.valueOf(current.charAt(j)));
@@ -127,11 +121,11 @@ public class WordLadderGUI extends JFrame {
                         wordPanel.add(label);
                     }
         
-                    outputPanel.add(wordPanel);  // Add each wordPanel to the outputPanel
+                    outputPanel.add(wordPanel);  
                 }
         
-                outputPanel.revalidate();  // Refresh layout
-                outputPanel.repaint();  // Repaint to show updates
+                outputPanel.revalidate(); 
+                outputPanel.repaint();  
             }
         
             resultLabel.setText("Selected Algorithm: " + algorithm +

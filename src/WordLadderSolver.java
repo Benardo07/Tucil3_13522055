@@ -1,4 +1,3 @@
-package src;
 import java.util.*;
 
 public class WordLadderSolver {
@@ -15,7 +14,7 @@ public class WordLadderSolver {
             return new SolverResult(Collections.emptyList(), 0, 0); // Start or end word not in dictionary
         }
 
-        Queue<Node> queue = new LinkedList<>();
+        PriorityQueue<Node> queue = new PriorityQueue<>(Comparator.comparingInt(node -> node.cost));
         Set<String> visited = new HashSet<>();
         queue.add(new Node(start, null, 0));
         visited.add(start);

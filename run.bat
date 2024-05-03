@@ -20,7 +20,7 @@ if %ERRORLEVEL% neq 0 (
 
 :: Run the Java program
 echo Running the program...
-java -cp %BIN_DIR% src.Main
+java -cp %BIN_DIR% Main
 
 :: End of script
 endlocal

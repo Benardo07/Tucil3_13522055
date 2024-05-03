@@ -1,4 +1,3 @@
-package src;
 import java.util.*;
 class SolverResult {
     private List<String> path;        
