@@ -1,6 +1,8 @@
+package src;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Collections;
@@ -111,15 +113,16 @@ public class WordLadderGUI extends JFrame {
                     JPanel wordPanel = new JPanel();
                     wordPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
                     String current = result.getPath().get(i);
-                    String next = i < result.getPath().size() - 1 ? result.getPath().get(i + 1) : null;
+                    String prev = i != 0 ? result.getPath().get(i-1) : null;
         
                     JLabel numberLabel = new JLabel((i + 1) + ". ");
                     wordPanel.add(numberLabel);
         
                     for (int j = 0; j < current.length(); j++) {
                         JLabel label = new JLabel(String.valueOf(current.charAt(j)));
-                        if (next != null && j < next.length() && current.charAt(j) != next.charAt(j)) {
-                            label.setForeground(Color.BLUE); 
+                        if (prev != null && j < prev.length() && current.charAt(j) != prev.charAt(j)) {
+                            String styledText = "<html><u><font color='blue'>" + current.charAt(j) + "</font></u></html>";
+                            label.setText(styledText);
                         }
                         wordPanel.add(label);
                     }
@@ -135,15 +138,4 @@ public class WordLadderGUI extends JFrame {
                                 ", Execution Time: " + result.getTimeTaken() + " ms" +
                                 ", Visited Nodes: " + result.getVisitedNodes());
         }
-        
-        public static void main(String[] args) {
-            // Example dictionary, replace with actual dictionary load logic
-            Set<String> dictionary = Set.of("code", "coda", "soda", "sora", "word", "ward");
-        
-            SwingUtilities.invokeLater(() -> {
-                WordLadderGUI frame = new WordLadderGUI(dictionary);
-                frame.setVisible(true);
-            });
-        }
-        
 }

@@ -1,10 +1,11 @@
+package src;
 import java.util.*;
 
 import javax.swing.SwingUtilities;
 
 public class Main {
     public static void main(String[] args) {
-        Set<String> dictionary = DictionaryLoader.loadWordsFromFile("words.txt");
+        Set<String> dictionary = DictionaryLoader.loadWordsFromFile("bin/words.txt");
         // WordLadderSolver solver = new WordLadderSolver(dictionary);
 
         SwingUtilities.invokeLater(() -> {

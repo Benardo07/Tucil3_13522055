@@ -1,3 +1,4 @@
+package src;
 class Node implements Comparable<Node> {
     String word;
     Node parent;
