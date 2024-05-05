@@ -26,11 +26,16 @@ This project is a word ladder solver implemented in Java. It utilizes three diff
 ## How to Run The Program
 1. Clone this repository by typing `git clone https://github.com/Benardo07/Tucil3_13522055.git` in the terminal.
 2. Change the directory using `cd Tucil3_13522055`.
-3. 3. Compile and run the program.
-- **Windows**: Clone this repository and navigate to the project directory in Command Prompt or PowerShell. Run the program by typing `./run`.
-- **Linux**: Clone this repository and navigate to the project directory in the terminal. Run the program by typing `./run.sh`.3. Compile and run the program by typing `./run`.
-
-
+3. Compile and run the program.
+- **Windows**: Run the program by typing 
+```bash
+./run
+```
+- **Linux**:  Run the program by typing 
+```bash
+chmod +x run.sh
+./run.sh
+```
 
 ## Project Status
 This project has been completed and can be executed.
