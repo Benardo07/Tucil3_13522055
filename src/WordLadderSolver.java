@@ -8,6 +8,10 @@ public class WordLadderSolver {
         this.dictionary = dictionary;
     }
 
+    public  Set<String> getDictionary(){
+        return dictionary;
+    }
+
     public SolverResult solveUCS(String start, String end) {
         long startTime = System.currentTimeMillis();
         if (!dictionary.contains(start) || !dictionary.contains(end)) {
@@ -76,12 +80,14 @@ public class WordLadderSolver {
         Set<String> visited = new HashSet<>();
         queue.add(new Node(start, null, getHeuristic(start, end)));
         visited.add(start);
+        int visitedCount = 1;
 
         while (!queue.isEmpty()) {
             Node current = queue.poll();
+            visitedCount++;
             if (current.word.equals(end)) {
                 long endTime = System.currentTimeMillis();
-                return new SolverResult(constructPath(current), endTime - startTime, visited.size());
+                return new SolverResult(constructPath(current), endTime - startTime, visitedCount);
             }
 
             for (String neighbor : getNeighbors(current.word)) {
