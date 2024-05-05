@@ -4,7 +4,7 @@ import javax.swing.SwingUtilities;
 
 public class Main {
     public static void main(String[] args) {
-        Set<String> dictionary = DictionaryLoader.loadWordsFromFile("bin/words.txt");
+        Set<String> dictionary = DictionaryLoader.loadWordsFromFile("bin/dictionary.txt");
         // WordLadderSolver solver = new WordLadderSolver(dictionary);
 
         SwingUtilities.invokeLater(() -> {
