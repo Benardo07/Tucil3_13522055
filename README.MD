@@ -9,7 +9,8 @@
 3. [How to Run The Program](#how-to-run-the-program)
 4. [Project Status](#project-status)
 5. [Project Structure](#project-structure)
-6. [Contributors](#contributors)
+6. [Documentaion](#documentaion)
+7. [Contributors](#contributors)
 
 
 ## General Information
@@ -21,8 +22,6 @@ This project is a word ladder solver implemented in Java. It utilizes three diff
 |   1    | Java Development Kit (JDK)           | [Windows](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) <br> [Linux](https://openjdk.java.net/install/) |
 |   2    | Windows Subsystem for Linux (WSL)    | [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)                                  |
 |   3    | Ubuntu 22.04.3 LTS                   | [Ubuntu](https://ubuntu.com/download/desktop)                                                 |
-                                             |
-
 
 ## How to Run The Program
 1. Clone this repository 
