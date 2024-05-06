@@ -22,12 +22,13 @@ public class WordLadderSolver {
         Set<String> visited = new HashSet<>();
         queue.add(new Node(start, null, 0));
         visited.add(start);
-
+        int visitedCount = 0;
         while (!queue.isEmpty()) {
             Node current = queue.poll();
+            visitedCount++;
             if (current.word.equals(end)) {
                 long endTime = System.currentTimeMillis();
-                return new SolverResult(constructPath(current), endTime - startTime, visited.size());
+                return new SolverResult(constructPath(current), endTime - startTime, visitedCount);
             }
 
             for (String neighbor : getNeighbors(current.word)) {
@@ -38,7 +39,7 @@ public class WordLadderSolver {
             }
         }
         long endTime = System.currentTimeMillis();
-        return new SolverResult(Collections.emptyList(), endTime - startTime, visited.size()); // No solution found
+        return new SolverResult(Collections.emptyList(), endTime - startTime, visitedCount); // No solution found
     }
 
     public SolverResult solveUsingGreedy(String start, String end) {
@@ -51,12 +52,13 @@ public class WordLadderSolver {
         Set<String> visited = new HashSet<>();
         queue.add(new Node(start, null, getHeuristic(start, end)));
         visited.add(start);
-
+        int visitedCount = 0;
         while (!queue.isEmpty()) {
             Node current = queue.poll();
+            visitedCount++;
             if (current.word.equals(end)) {
                 long endTime = System.currentTimeMillis();
-                return new SolverResult(constructPath(current), endTime - startTime, visited.size());
+                return new SolverResult(constructPath(current), endTime - startTime,visitedCount);
             }
 
             for (String neighbor : getNeighbors(current.word)) {
@@ -67,7 +69,7 @@ public class WordLadderSolver {
             }
         }
         long endTime = System.currentTimeMillis();
-        return new SolverResult(Collections.emptyList(), endTime - startTime, visited.size()); // No solution found
+        return new SolverResult(Collections.emptyList(), endTime - startTime,visitedCount); // No solution found
     }
 
     public SolverResult solveUsingAStar(String start, String end) {
@@ -80,7 +82,7 @@ public class WordLadderSolver {
         Set<String> visited = new HashSet<>();
         queue.add(new Node(start, null, getHeuristic(start, end)));
         visited.add(start);
-        int visitedCount = 1;
+        int visitedCount = 0;
 
         while (!queue.isEmpty()) {
             Node current = queue.poll();
@@ -99,7 +101,7 @@ public class WordLadderSolver {
             }
         }
         long endTime = System.currentTimeMillis();
-        return new SolverResult(Collections.emptyList(), endTime - startTime, visited.size()); // No solution found
+        return new SolverResult(Collections.emptyList(), endTime - startTime, visitedCount); 
     }
 
 

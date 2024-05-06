@@ -1,5 +1,6 @@
 <h1 align="center"> Tugas Kecil 3 </h1>
 <h2 align="center"> IF2211 Strategi Algoritma </h2>
+<h3 align="center">Penyelesaian Permainan Word Ladder Menggunakan Algoritma UCS, Greedy Best First Search, dan A*</h3>
 
 
 ## Table of Contents
@@ -24,17 +25,32 @@ This project is a word ladder solver implemented in Java. It utilizes three diff
 
 
 ## How to Run The Program
-1. Clone this repository by typing `git clone https://github.com/Benardo07/Tucil3_13522055.git` in the terminal.
-2. Change the directory using `cd Tucil3_13522055`.
-3. Compile and run the program.
-- **Windows**: Run the program by typing 
+1. Clone this repository 
+```bash
+git clone https://github.com/Benardo07/Tucil3_13522055.git
+ ```
+2. Change the directory to the root directory
+```bash
+cd Tucil3_13522055
+```
+3. Compile and run the program using script file
+- Windows : 
 ```bash
 ./run
 ```
-- **Linux**:  Run the program by typing 
+- Linux (make sure the run.sh file if in LF mode): 
 ```bash
 chmod +x run.sh
 ./run.sh
+```
+4. Alternatively, you can compile and run the program manually using the following steps for both (Linux and Windows):
+- Compile the Java files:
+```bash
+javac -d ./bin src/*.java
+```
+- Run the program:
+```bash
+java -cp ./bin Main
 ```
 
 ## Project Status
@@ -67,6 +83,11 @@ This project has been completed and can be executed.
 └── run.sh                                 
         
 ```
+
+## Documentaion
+### Graphical User Interface (GUI)
+![GUI](./bin/GUI.png)
+
 
 
 ## Contributors
